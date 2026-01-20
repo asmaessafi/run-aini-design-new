@@ -117,7 +117,7 @@ const PlayerLayout = () => {
                 <div
                   className="h-full flex flex-col overflow-y-auto"
                   style={{
-                    background: 'linear-gradient(180deg, #902bd1 0%, #6753d8 39%, #0da5a1 55%, #6753d8 71%, #902bd1 100%)'
+                  background: 'linear-gradient(180deg, #000000 0%, #0a0f2a 30%, #0f172a 70%, #000000 100%)'
                   }}
                 >
                   {/* Header */}
@@ -169,16 +169,8 @@ const PlayerLayout = () => {
                           }
                         >
                           <div className="flex items-center gap-4">
-                            <div className={`text-2xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110
-                        ${item.label === 'Home' ? 'text-[#00d0cb]' :
-                                item.label === 'Profile' ? 'text-pink-400 ' :
-                                  item.label === 'Training' ? 'text-[#02198e]' :
-                                    item.label === 'Performance' ? 'text-cyan-400' :
-                                      item.label === 'Analysis' ? 'text-yellow-400' :
-                                        item.label === 'Feedback' ? 'text-red-400' :
-                                          item.label === 'Settings' ? 'text-[#f767fa]' :
-                                            'text-gray-400'
-                              }`}
+                            <div className={`text-2xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110 text-[#05d4f0]
+                      `}
                             >
                               {item.icon}
                             </div>
@@ -265,7 +257,7 @@ const PlayerLayout = () => {
       overflow-hidden
     `}
           style={{
-            background: 'linear-gradient(180deg, #902bd1 0%, #6753d8 39%, #0da5a1 55%, #6753d8 71%, #902bd1 100%)'
+                  background: 'linear-gradient(180deg, #000000 0%, #0a0f2a 30%, #0f172a 70%, #000000 100%)'
           }}
         >
           {/* Header - Player Info + Close button when expanded */}
@@ -339,16 +331,8 @@ const PlayerLayout = () => {
                   title={isDesktopCollapsed ? item.label : undefined}
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`text-xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110
-                ${item.label === 'Home' ? 'text-[#00d0cb]' :
-                        item.label === 'Profile' ? 'text-pink-400 ' :
-                          item.label === 'Training' ? 'text-[#02198e]' :
-                            item.label === 'Performance' ? 'text-cyan-400' :
-                              item.label === 'Analysis' ? 'text-yellow-400' :
-                                item.label === 'Feedback' ? 'text-red-400' :
-                                  item.label === 'Settings' ? 'text-[#f767fa]' :
-                                    'text-gray-400'
-                      }`}>
+                    <div className={`text-xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110 text-[#05d4f0]
+                `}>
                       {item.icon}
                     </div>
 

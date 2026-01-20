@@ -103,7 +103,7 @@ const CoachLayout = () => {
           <div
             className="h-full flex flex-col overflow-y-auto"
             style={{
-            background: 'linear-gradient(180deg, #902bd1 0%, #6753d8 39%, #0da5a1 55%, #6753d8 71%, #902bd1 100%)'
+                  background: 'linear-gradient(180deg, #000000 0%, #0a0f2a 30%, #0f172a 70%, #000000 100%)'
             }}
           >
             {/* Header */}
@@ -149,15 +149,8 @@ const CoachLayout = () => {
                     }
                   >
                     <div className="flex items-center gap-4">
-                      <div className={`text-2xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110
-                        ${item.label === 'Dashboard' ? 'text-[#00d0cb]' :
-                  item.label === 'Profile' ? 'text-[#eb77f6]' :
-                    item.label === 'Players' ? 'text-[#05d4f0]' :
-                      item.label === 'Training' ? 'text-[#0020c8]' :
-                        item.label === 'Agenda' ? 'text-yellow-400' :
-                          item.label === 'Matches' ? 'text-red-400' :
-                            item.label === 'Settings' ? 'text-gray-200' :
-                              'text-gray-400'}`}
+                      <div className={`text-2xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110 text-[#05d4f0]
+                        `}
                       >
                         {item.icon}
                       </div>
@@ -244,7 +237,7 @@ const CoachLayout = () => {
       overflow-hidden
     `}
     style={{
-background: 'linear-gradient(180deg, #902bd1 0%, #6753d8 39%, #0da5a1 55%, #6753d8 71%, #902bd1 100%)'
+       background: 'linear-gradient(180deg, #000000 0%, #0a0f2a 30%, #0f172a 70%, #000000 100%)'
 }}
   >
     {/* Header - Logo + Close button when expanded */}
@@ -313,16 +306,8 @@ background: 'linear-gradient(180deg, #902bd1 0%, #6753d8 39%, #0da5a1 55%, #6753
             title={isDesktopCollapsed ? item.label : undefined}
           >
             <div className="flex items-center gap-4">
-              <div className={`text-xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110
-                ${item.label === 'Dashboard' ? 'text-[#00d0cb]' :
-                  item.label === 'Profile' ? 'text-[#eb77f6]' :
-                    item.label === 'Players' ? 'text-[#05d4f0]' :
-                      item.label === 'Training' ? 'text-[#0020c8]' :
-                        item.label === 'Agenda' ? 'text-yellow-400' :
-                          item.label === 'Matches' ? 'text-red-400' :
-                            item.label === 'Settings' ? 'text-gray-200' :
-                              'text-gray-400'
-              }`}>
+              <div className={`text-xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110 text-[#05d4f0]
+               `}>
                 {item.icon}
               </div>
 
