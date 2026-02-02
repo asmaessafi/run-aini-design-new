@@ -60,7 +60,10 @@ function Layout({ children }) {
   const isFullScreen = noLayoutRoutes.includes(location.pathname);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg"
+    style={{
+        background: 'linear-gradient(135deg, #000000 0%, #0a0f2a 45%, #180033 100%)'
+      }}>
       <ScrollToTop />
       {!isFullScreen && <Navbar />}
       <main className={`flex-grow ${!isFullScreen ? 'mt-16' : ''}`}>

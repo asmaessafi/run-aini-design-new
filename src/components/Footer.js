@@ -3,41 +3,59 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from 'react
 import { motion } from 'framer-motion';
 
 const Footer = () => {
+  const gradientText = "bg-gradient-to-r from-[#902bd1] via-[#00d0cb] to-[#00d0cb] bg-clip-text text-transparent";
+
   return (
-    <footer className="bg-gray-950 border-t border-gray-800">
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+    <footer className="relative bg-black border-t border-gray-800/40 overflow-hidden">
+      {/* Background atmosphere */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_75%,rgba(144,43,209,0.08),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_25%,rgba(0,208,203,0.06),transparent_65%)]" />
+      </div>
+
+      <div className="relative max-w-8xl mx-auto px-6 sm:px-10 lg:px-16 py-16 md:py-20 lg:py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="grid md:grid-cols-4 gap-8 lg:gap-12"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="grid md:grid-cols-4 gap-10 lg:gap-16"
         >
-          {/* Brand Column */}
-          <div className="space-y-5">
-            <motion.div whileHover={{ scale: 1.02 }} className="inline-block">
-              <Link to="/" className="text-2xl font-bold flex items-center">
-                <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
-                  RUN
-                </span>
-                <span className="text-white ml-1">AINI</span>
+          {/* Brand & description */}
+          <div className="space-y-6 lg:space-y-8">
+            <motion.div whileHover={{ scale: 1.03 }} transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+              <Link to="/" className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight flex items-center">
+                <span className={gradientText}>RUN</span>
+                <span className="text-white/95 ml-1.5">AINI</span>
               </Link>
             </motion.div>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+
+            <p className="text-gray-400/90 text-base lg:text-lg leading-relaxed max-w-sm font-light">
               Transform your team's performance with AI-driven insights and advanced analytics
+            </p>
+
+            <p className="text-gray-500/80 text-sm lg:text-base pt-2">
+              © {new Date().getFullYear()} RUNAINI. All rights reserved.
             </p>
           </div>
 
-          {/* Platform Links */}
-          <div>
-            <h5 className="text-white font-semibold mb-5 text-lg">Platform</h5>
-            <ul className="space-y-3">
+          {/* Platform */}
+          <div className="space-y-6 lg:space-y-8">
+            <h5 className={`text-xl lg:text-2xl font-extrabold ${gradientText}`}>
+              Platform
+            </h5>
+            <ul className="space-y-4 lg:space-y-5">
               {['Features', 'Pricing', 'Security'].map((item) => (
-                <motion.li key={item} whileHover={{ x: 5 }}>
-                  <Link 
-                    to={`/${item.toLowerCase()}`} 
-                    className="group flex items-center text-gray-400 hover:text-blue-400 transition-colors text-sm"
+                <motion.li
+                  key={item}
+                  whileHover={{ x: 8 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <Link
+                    to={`/${item.toLowerCase()}`}
+                    className="group flex items-center text-gray-300 hover:text-[#00d0cb] transition-all duration-300 text-base lg:text-lg font-medium"
                   >
-                    <span className="w-1 h-1 bg-blue-600 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#902bd1] to-[#00d0cb] mr-3 opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300" />
                     {item}
                   </Link>
                 </motion.li>
@@ -45,17 +63,23 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal Links */}
-          <div>
-            <h5 className="text-white font-semibold mb-5 text-lg">Legal</h5>
-            <ul className="space-y-3">
+          {/* Legal */}
+          <div className="space-y-6 lg:space-y-8">
+            <h5 className={`text-xl lg:text-2xl font-extrabold ${gradientText}`}>
+              Legal
+            </h5>
+            <ul className="space-y-4 lg:space-y-5">
               {['Privacy', 'Terms', 'Cookies'].map((item) => (
-                <motion.li key={item} whileHover={{ x: 5 }}>
-                  <Link 
-                    to={`/${item.toLowerCase()}`} 
-                    className="group flex items-center text-gray-400 hover:text-blue-400 transition-colors text-sm"
+                <motion.li
+                  key={item}
+                  whileHover={{ x: 8 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <Link
+                    to={`/${item.toLowerCase()}`}
+                    className="group flex items-center text-gray-300 hover:text-[#00d0cb] transition-all duration-300 text-base lg:text-lg font-medium"
                   >
-                    <span className="w-1 h-1 bg-blue-600 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#902bd1] to-[#00d0cb] mr-3 opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300" />
                     {item} Policy
                   </Link>
                 </motion.li>
@@ -63,22 +87,27 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social & Contact */}
-          <div>
-            <h5 className="text-white font-semibold mb-5 text-lg">Connect</h5>
-            <div className="flex space-x-3">
+          {/* Social */}
+          <div className="space-y-6 lg:space-y-8">
+            <h5 className={`text-xl lg:text-2xl font-extrabold ${gradientText}`}>
+              Connect
+            </h5>
+
+            <div className="flex flex-wrap gap-4 lg:gap-5">
               {[
-                { icon: <FaFacebook />, label: 'Facebook' },
-                { icon: <FaTwitter />, label: 'Twitter' },
-                { icon: <FaInstagram />, label: 'Instagram' },
-                { icon: <FaLinkedin />, label: 'LinkedIn' },
-                { icon: <FaYoutube />, label: 'YouTube' },
+                { icon: <FaFacebook size={20} />, label: 'Facebook' },
+                { icon: <FaTwitter size={20} />, label: 'Twitter' },
+                { icon: <FaInstagram size={20} />, label: 'Instagram' },
+                { icon: <FaLinkedin size={20} />, label: 'LinkedIn' },
+                { icon: <FaYoutube size={20} />, label: 'YouTube' },
               ].map((social) => (
                 <motion.a
                   key={social.label}
                   href="#"
-                  whileHover={{ y: -3 }}
-                  className="text-gray-400 hover:text-white p-2.5 rounded-full bg-gray-900 hover:bg-gradient-to-br from-blue-600 to-blue-400 transition-all shadow-sm hover:shadow-blue-500/20"
+                  whileHover={{ y: -6, scale: 1.18 }}
+                  whileTap={{ scale: 0.92 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                  className="text-gray-300 hover:text-white p-3.5 rounded-2xl bg-gray-900/60 backdrop-blur-md border border-gray-700/50 hover:border-[#00d0cb]/40 hover:shadow-[0_0_20px_rgba(0,208,203,0.18)] transition-all duration-300"
                   aria-label={social.label}
                 >
                   {social.icon}
@@ -86,17 +115,6 @@ const Footer = () => {
               ))}
             </div>
           </div>
-        </motion.div>
-
-        {/* Copyright */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="border-t border-gray-800 mt-8 pt-8 text-center"
-        >
-          <p className="text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} RUNAINI. All rights reserved.
-          </p>
         </motion.div>
       </div>
     </footer>
